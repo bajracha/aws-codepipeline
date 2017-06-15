@@ -1,9 +1,10 @@
-var time = require('time');
+'use strict';
+
+console.log('Loading function');
+
 exports.handler = (event, context, callback) => {
-    var currentTime = new time.Date(); 
-    currentTime.setTimezone("America/Los_Angeles");
-    callback(null, {
-        statusCode: '200',
-        body: 'The time in Los Angeles is: ' + currentTime.toString(),
-    });
+    //console.log('Received event:', JSON.stringify(event, null, 2));
+    console.log('Hello world');
+    callback(null, 'Hello');  // Echo back the first key value
+    //callback('Something went wrong');
 };
