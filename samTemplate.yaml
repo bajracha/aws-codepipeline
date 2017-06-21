@@ -62,6 +62,8 @@ Resources:
            AttributeType: S
          - AttributeName: doc
            AttributeType: S
+         - AttributeName: text
+           AttributeType: S
        KeySchema:
          - AttributeName: id
            KeyType: HASH
