@@ -55,3 +55,16 @@ Resources:
 
   Table:
     Type: AWS::Serverless::SimpleTable
+    Properties:
+       TableName: SimpleTable
+       AttributeDefinitions:
+         - AttributeName: id
+           AttributeType: S
+         - AttributeName: doc
+           AttributeType: String
+       PrimaryKey:
+          Name: id
+          Type: String
+       ProvisionedThroughput:
+         ReadCapacityUnits: 5
+         WriteCapacityUnits: 5
