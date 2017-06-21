@@ -54,17 +54,19 @@ Resources:
             Method: delete
 
   Table:
-    Type: AWS::Serverless::SimpleTable
+    Type: AWS::DynamoDB::Table
     Properties:
        TableName: SimpleTable
        AttributeDefinitions:
          - AttributeName: id
            AttributeType: S
          - AttributeName: doc
-           AttributeType: String
-       PrimaryKey:
-          Name: id
-          Type: String
+           AttributeType: S
+       KeySchema:
+         - AttributeName: id
+           KeyType: HASH
+         - AttributeName: doc
+           KeyType: RANGE   
        ProvisionedThroughput:
          ReadCapacityUnits: 5
          WriteCapacityUnits: 5
