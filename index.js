@@ -16,6 +16,7 @@ const createResponse = (statusCode, body) => {
 
 exports.get = (event, context, callback) => {
     console.log('event->'+event);
+    console.log('resource->' + event.pathParameters.resourceId);
     let params = {
         TableName: tableName,
         Key: {
